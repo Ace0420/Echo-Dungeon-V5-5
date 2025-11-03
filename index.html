@@ -487,7 +487,7 @@
                 if (command.includes('leave') || command.includes('exit') || command.includes('close')) {
                     game.merchantOpen = false;
                     speak('You leave the merchant.');
-                } else if (command.includes('buy, purchase,')) {
+                } else if (command.includes('buy') || ('purchase')) {
                     buyFromMerchant(command);
                 } else if (command.includes('sell')) {
                     sellToMerchant(command);
@@ -654,7 +654,7 @@
         function levelUp() {
             game.player.level++;
             game.player.experience -= game.player.experienceToNext;
-            game.player.experienceToNext = Math.floor(game.player.experienceToNext * 1.25);
+            game.player.experienceToNext = Math.floor(game.player.experienceToNext * 1.15);
             
             const healthGain = 20;
             const manaGain = 10;
