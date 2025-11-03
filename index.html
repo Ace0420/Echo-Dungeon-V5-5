@@ -175,7 +175,7 @@
             { name: 'Poison Blade', damage: 30, cost: 20, type: 'poison', duration: 3, description: 'Poison damages 5 per turn for 3 turns', class: 'rogue' },
             { name: 'Chain Lightning', damage: 75, cost: 30, type: 'damage', description: 'Devastating lightning attack', class: 'mage' },
             { name: 'Arcane Missiles', damage: 65, cost: 15, type: 'aoe', description: 'Magic missiles hit all enemies', class: 'mage' },
-            { name: 'Whirlwind', damage: 50, cost: 25, type: 'aoe', description: 'Spin attack hitting all enemies',
+            { name: 'Whirlwind', damage: 50, cost: 25, type: 'aoe', description: 'Spin attack hitting all enemies'},
             { name: 'Shadow Strike', damage: 40, cost: 20, type: 'sneak', description: 'Strike from shadows without enemy retaliation', class: 'rogue' },
         ];
 
@@ -290,7 +290,7 @@
             ancientWraith: { name: 'Ancient Wraith', health: 90, damage: 26, gold: 30, exp: 80, fleeChance: 0.4 },
             elderTroll: { name: 'Elder Troll', health: 150, damage: 28, gold: 40, exp: 100, fleeChance: 0.2, regenerate: 10 },
             archDemon: { name: 'Arch Demon', health: 180, damage: 35, gold: 70, exp: 160, fleeChance: 0.2 },
-            hydra: { name: 'Hydra', health: 140, damage: 30, experience 125, fleeChance: 0.3, regenerate: 12 },
+            hydra: { name: 'Hydra', health: 140, damage: 30, exp: 125, fleeChance: 0.3, regenerate: 12 },
             phoenixGuardian: { name: 'Phoenix Guardian', health: 130, damage: 32, gold: 60, exp: 145, fleeChance: 0.3, regenerate: 15 },
             lichKing: { name: 'Lich King', health: 160, damage: 38, gold: 80, exp: 185, fleeChance: 0.1, regenerate: 10 }
         };
@@ -1258,8 +1258,8 @@
             const currentLevel = game.dungeon.currentLevel;
             game.dungeon.grid = {};
             
-            const centerX = 5; 
-            const centerY = 5;
+            const centerX = 6; 
+            const centerY = 6;
             
             for (let x = 0; x < size; x++) {
                 for (let y = 0; y < size; y++) {
