@@ -82,7 +82,7 @@
                 equippedRings: [],
                 learnedAbilities: [],
                 equippedAmulet: '',
-                position: { x: 5, y: 5 },
+                position: { x: 6, y: 6 },
                 baseAttack: 15,
                 defense: 0,
                 weapon: '',
@@ -115,7 +115,7 @@
                 maxMana: 30,
                 gold: 50,
                 items: ['Steel Sword', 'Health Potion', 'Health Potion', 'Chainmail', 'Iron Shield'],
-                special: { name: 'Power Strike', damage: 50, cost: 15, type: 'damage' }
+                special: { name: 'Power Strike', damage: 70, cost: 15, type: 'damage' }
             },
             mage: { 
                 name: 'Mage',
@@ -135,7 +135,7 @@
                 maxMana: 60,
                 gold: 100,
                 items: ['Shadow Daggers', 'Lockpicks', 'Health Potion', 'Shadow Leather'],
-                special: { name: 'Backstab', damage: 35, cost: 15, type: 'damage' }
+                special: { name: 'Backstab', damage: 45, cost: 15, type: 'damage' }
             }
         };
 
@@ -148,7 +148,7 @@
                 { name: 'Archmage Staff', attack: 18, class: 'mage', value: 350 },
                 { name: 'Vorpal Daggers', attack: 16, class: 'rogue', value: 320 },
                 { name: 'Demon Slayer Blade', attack: 20, class: 'warrior', value: 500 },
-                { name: 'Staff of the Cosmos', attack: 25, class: 'mage', value: 600 },
+                { name: 'Staff of the Cosmos', attack: 15, mana: 20, class: 'mage', value: 600 },
                 { name: 'Ethereal Blades', attack: 22, class: 'rogue', value: 550 }
             ],
             armor: [
@@ -158,7 +158,7 @@
                 { name: 'Dragonscale Plate', defense: 15, class: 'warrior', value: 350 },
                 { name: 'Arcane Vestments', defense: 12, class: 'mage', value: 380 },
                 { name: 'Phantom Suit', defense: 13, class: 'rogue', value: 360 },
-                { name: 'Titanium Fortress', defense: 22, class: 'warrior', value: 550 },
+                { name: 'Titanium Fortress', defense: 25, class: 'warrior', value: 550 },
                 { name: 'Celestial Robes', defense: 18, class: 'mage', value: 600 },
                 { name: 'Void Cloak', defense: 20, class: 'rogue', value: 580 }
             ],
@@ -283,7 +283,7 @@
             orc: { name: 'Orc', health: 60, damage: 15, gold: 12, exp: 50, fleeChance: 0.5 },
             wraith: { name: 'Wraith', health: 50, damage: 18, gold: 15, exp: 75, fleeChance: 0.6 },
             troll: { name: 'Troll', health: 80, damage: 20, gold: 20, exp: 65, fleeChance: 0.4, regenerate: 5 },
-            dragon: { name: 'Dragon', health: 150, damage: 30, gold: 50, exp: 250, fleeChance: 0.1 },
+            dragon: { name: 'Dragon', health: 350, damage: 30, gold: 50, exp: 250, fleeChance: 0.1 },
             demon: { name: 'Demon', health: 120, damage: 28, gold: 45, exp: 80, fleeChance: 0.3 },
             vampire: { name: 'Vampire', health: 100, damage: 25, gold: 40, exp: 100, fleeChance: 0.4, regenerate: 8 },
             orcChieftain: { name: 'Orc Chieftain', health: 100, damage: 22, gold: 25, exp: 65, fleeChance: 0.3 },
@@ -455,7 +455,7 @@
         function initializeGame() {
             game.initialized = true;
             micButton.classList.remove('start-button');
-            speak("Welcome to Echo Dungeon V3! Say 'load game' and provide your save PIN, or choose your class: warrior, mage, or rogue."); 
+            speak("Welcome to Echo Dungeon V5.5! Say 'load game' and provide your save PIN, or choose your class: warrior, mage, or rogue."); 
         }
 
         function handleClick() {
