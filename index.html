@@ -82,7 +82,7 @@
                 equippedRings: [],
                 learnedAbilities: [],
                 equippedAmulet: '',
-                position: { x: 5, y: 5 },
+                position: { x: 6, y: 6, },
                 baseAttack: 15,
                 defense: 0,
                 weapon: '',
@@ -171,11 +171,11 @@
 
         const abilities = [
             { name: 'Icy Blast', damage: 70, cost: 20, type: 'freeze', description: 'Deals damage and freezes enemy for 1 turn', class: 'mage' },
-            { name: 'Shield Bash', damage: 60, cost: 20, type: 'stun', description: 'Stun enemy for one turn', class: 'warrior' },
-            { name: 'Poison Blade', damage: 30, cost: 20, type: 'poison', duration: 3, description: 'Poison damages 5 per turn for 3 turns', class: 'rogue' },
-            { name: 'Chain Lightning', damage: 75, cost: 30, type: 'damage', description: 'Devastating lightning attack', class: 'mage' },
-            { name: 'Arcane Missiles', damage: 65, cost: 15, type: 'aoe', description: 'Magic missiles hit all enemies', class: 'mage' },
-            { name: 'Whirlwind', damage: 50, cost: 25, type: 'aoe', description: 'Spin attack hitting all enemies', class: 'warrior'},
+            { name: 'Shield Bash', damage: 80, cost: 20, type: 'stun', description: 'Stun enemy for one turn', class: 'warrior' },
+            { name: 'Poison Blade', damage: 40, cost: 20, type: 'poison', duration: 3, description: 'Poison damages 5 per turn for 3 turns', class: 'rogue' },
+            { name: 'Chain Lightning', damage: 75, cost: 25, type: 'damage', description: 'Devastating lightning attack', class: 'mage' },
+            { name: 'Arcane Missiles', damage: 75, cost: 15, type: 'aoe', description: 'Magic missiles hit all enemies', class: 'mage' },
+            { name: 'Whirlwind', damage: 70, cost: 25, type: 'aoe', description: 'Spin attack hitting all enemies', class: 'warrior'},
             { name: 'Shadow Strike', damage: 40, cost: 20, type: 'sneak', description: 'Strike from shadows without enemy retaliation', class: 'rogue' },
         ];
 
@@ -283,7 +283,7 @@
             orc: { name: 'Orc', health: 60, damage: 15, gold: 12, exp: 50, fleeChance: 0.5 },
             wraith: { name: 'Wraith', health: 50, damage: 18, gold: 15, exp: 75, fleeChance: 0.6 },
             troll: { name: 'Troll', health: 80, damage: 20, gold: 20, exp: 65, fleeChance: 0.4, regenerate: 5 },
-            dragon: { name: 'Dragon', health: 150, damage: 30, gold: 50, exp: 250, fleeChance: 0.1 },
+            dragon: { name: 'Dragon', health: 350, damage: 30, gold: 50, exp: 450, fleeChance: 0.1 },
             demon: { name: 'Demon', health: 120, damage: 28, gold: 45, exp: 80, fleeChance: 0.3 },
             vampire: { name: 'Vampire', health: 100, damage: 25, gold: 40, exp: 100, fleeChance: 0.4, regenerate: 8 },
             orcChieftain: { name: 'Orc Chieftain', health: 100, damage: 22, gold: 25, exp: 65, fleeChance: 0.3 },
@@ -353,7 +353,7 @@
             }
             const [first, ...rest] = messages;
             speak(first, () => {
-                if (rest.length > 10) {
+                if (rest.length > 0) {
                     setTimeout(() => speakSequence(rest, callback), 500);
                 } else if (callback) {
                     callback();
@@ -487,7 +487,7 @@
                 if (command.includes('leave') || command.includes('exit') || command.includes('close')) {
                     game.merchantOpen = false;
                     speak('You leave the merchant.');
-                } else if (command.includes('buy, purchase,')) {
+                } else if (command.includes('buy') || command.includes( purchase')) {
                     buyFromMerchant(command);
                 } else if (command.includes('sell')) {
                     sellToMerchant(command);
@@ -1425,7 +1425,7 @@
                 game.dungeon.hasSecretRoom = true;
             }
             
-            game.player.position = { x: 5, y: 5 };
+            game.player.position = { x: 6, y: 6 };
             const key = `${game.player.position.x},${game.player.position.y}`;
             game.currentRoom = game.dungeon.grid[key];
         }
