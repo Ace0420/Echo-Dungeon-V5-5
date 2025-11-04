@@ -654,7 +654,7 @@
         function levelUp() {
             game.player.level++;
             game.player.experience -= game.player.experienceToNext;
-            game.player.experienceToNext = Math.floor(game.player.experienceToNext * 1.25);
+            game.player.experienceToNext = Math.floor(game.player.experienceToNext * 1.05);
             
             const healthGain = 20;
             const manaGain = 10;
